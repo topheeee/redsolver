@@ -24,8 +24,11 @@ $background: #fffddb;
   1em 6em 0 $contrast, 2em 6em 0 $contrast;
 }
 
+* {
+  font-family: "PokemonGb" !important;
+}
+
 body {
-  font-family: "PokemonGb";
   background-color: $background;
 }
 

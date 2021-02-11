@@ -119,7 +119,7 @@ export default function Home() {
         type='button'
         className='nes-btn is-success'
       >
-        Solve
+        Never Give Up!
       </button>
     </Layout>
   )
