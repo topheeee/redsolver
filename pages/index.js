@@ -1,65 +1,126 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { useState, useEffect } from "react"
+import Layout from "../components/Layout"
+
+const PIKACHU_HP = 186
+const PIKACHU_HEAL_THRESHOLD = 45
+
+/**
+ * "max" and "min" are slightly misleading -
+ * These values are just the smallest and biggest numbers we care about
+ * because anything lower or higher is guaranteed.
+ */
+const SNORLAX_DEFENSE_MIN = 81
+const SNORLAX_DEFENSE_MAX = 88
+const SNORLAX_SP_DEF_MIN = 107
+const SNORLAX_SP_DEF_MAX = 116
+
+// format is `defense: max iron tail roll`
+const SNORLAX_DEFENSE_THRESHOLDS = {
+  82: 233,
+  83: 230,
+  84: 227,
+  85: 224,
+  86: 222,
+}
+
+// format is `spDef: max thunderbolt roll`
+const SNORLAX_SP_DEF_THRESHOLDS = {
+  115: 220,
+  114: 222,
+  113: 225,
+  112: 226,
+  111: 228,
+  110: 231,
+  109: 232,
+  108: 234,
+}
+
+// format is `kenya level: volt tackle recoil`
+const KENYA_RECOIL_TABLE = {
+  29: 27,
+  30: 28,
+  31: 29,
+}
 
 export default function Home() {
+  const [lockedIn, setLockedIn] = useState(false)
+
+  const [kenyaLevel, setKenyaLevel] = useState("")
+  const [gyaraHp, setGyaraHp] = useState("")
+  const [snorlaxHp, setSnorlaxHp] = useState("")
+  const [snorlaxDef, setSnorlaxDef] = useState("")
+  const [snorlaxSpDef, setSnorlaxSpDef] = useState("")
+
+  const handleKenyaLevel = (e) => setKenyaLevel(e.target.value)
+  const handleGyaraHp = (e) => setGyaraHp(e.target.value)
+  const handleSnorlaxHp = (e) => setSnorlaxHp(e.target.value)
+  const handleSnorlaxDef = (e) => setSnorlaxDef(e.target.value)
+  const handleSnorlaxSpDef = (e) => setSnorlaxSpDef(e.target.value)
+
+  const handleSolve = (e) => {
+    e.preventDefault()
+    setLockedIn(true)
+  }
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+    <Layout>
+      <div className='nes-field'>
+        <label htmlFor='kenya-level'>Kenya Level</label>
+        <input
+          onChange={handleKenyaLevel}
+          value={kenyaLevel}
+          type='text'
+          id='kenya-level'
+          className='nes-input'
+        />
+      </div>
+      <div className='nes-field'>
+        <label htmlFor='gyarados-hp'>Gyarados HP</label>
+        <input
+          onChange={handleGyaraHp}
+          value={gyaraHp}
+          type='text'
+          id='gyarados-hp'
+          className='nes-input'
+        />
+      </div>
+      <div className='nes-field'>
+        <label htmlFor='snorlax-hp'>Snorlax HP</label>
+        <input
+          onChange={handleSnorlaxHp}
+          value={snorlaxHp}
+          type='text'
+          id='snorlax-hp'
+          className='nes-input'
+        />
+      </div>
+      <div className='nes-field'>
+        <label htmlFor='snorlax-def'>Snorlax Defense</label>
+        <input
+          onChange={handleSnorlaxDef}
+          value={snorlaxDef}
+          type='text'
+          id='snorlax-def'
+          className='nes-input'
+        />
+      </div>
+      <div className='nes-field'>
+        <label htmlFor='snorlax-spdef'>Snorlax Special Defense</label>
+        <input
+          onChange={handleSnorlaxSpDef}
+          value={snorlaxSpDef}
+          type='text'
+          id='snorlax-spdef'
+          className='nes-input'
+        />
+      </div>
+      <button
+        onClick={handleSolve}
+        type='button'
+        className='nes-btn is-success'
+      >
+        Solve
+      </button>
+    </Layout>
   )
 }
