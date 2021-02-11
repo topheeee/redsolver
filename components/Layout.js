@@ -7,6 +7,14 @@ export default function Layout({ children }) {
       <Head>
         <title>Red Solver</title>
         <link rel='icon' href='/favicon.ico' />
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content='https://redsolver.gg' />
+        <meta property='og:title' content='Red Solver' />
+        <meta
+          property='og:description'
+          content='A Pokemon HG/SS speedrunning tool.'
+        />
+        <meta property='og:image' content='https://redsolver.gg/red.png' />
       </Head>
 
       <Grid
