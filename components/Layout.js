@@ -8,13 +8,13 @@ export default function Layout({ children }) {
         <title>Red Solver</title>
         <link rel='icon' href='/favicon.ico' />
         <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://redsolver.gg' />
         <meta property='og:title' content='Red Solver' />
+        <meta property='og:url' content='https://redsolver.gg' />
+        <meta property='og:image' content='https://redsolver.gg/red.png' />
         <meta
           property='og:description'
           content='A Pokemon HG/SS speedrunning tool.'
         />
-        <meta property='og:image' content='https://redsolver.gg/red.png' />
       </Head>
 
       <Grid
@@ -22,7 +22,7 @@ export default function Layout({ children }) {
         style={{ height: "100vh" }}
         verticalAlign='middle'
       >
-        <Grid.Column style={{ maxWidth: 450 }}>
+        <Grid.Column style={{ maxWidth: 650 }}>
           <Grid textAlign='center' verticalAlign='middle'>
             <Grid.Row
               style={{
