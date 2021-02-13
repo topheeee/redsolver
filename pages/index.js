@@ -115,13 +115,6 @@ export default function Home() {
       gyaraKenyaAndQuilavaDoNotPutInHealRange &&
       gyaraKenyaAndQuilavaPutInSnorlaxRange
 
-    console.log(isVoltTackleGuaranteed)
-    console.log(kenyaAndSnorlaxWillKill)
-    console.log(gyaraAndSnorlaxDoNotPutInHealRange)
-    console.log(snorlaxRecoil)
-    console.log(kenyaRecoil)
-    console.log(gyaraCurrentRecoil)
-
     if (isVoltTackleGuaranteed) {
       // if gyara + 2 snorlax kills pika and doesn't put it in heal range
       if (
