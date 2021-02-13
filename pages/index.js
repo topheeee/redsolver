@@ -418,15 +418,11 @@ export default function Home() {
     }
   }, [lockedIn])
 
-  const handleSolve = (e) => {
+  const toggleLockedIn = (e) => {
     e.preventDefault()
-    setLockedIn(true)
+    setLockedIn(!lockedIn)
   }
 
-  const handleReset = (e) => {
-    e.preventDefault()
-    setLockedIn(false)
-  }
   return (
     <Layout>
       {!lockedIn && (
@@ -492,7 +488,7 @@ export default function Home() {
             />
           </div>
           <button
-            onClick={handleSolve}
+            onClick={toggleLockedIn}
             type='button'
             className='nes-btn is-success'
           >
@@ -504,7 +500,7 @@ export default function Home() {
         <>
           {content}
           <button
-            onClick={handleReset}
+            onClick={toggleLockedIn}
             type='button'
             className='nes-btn is-warning'
           >
