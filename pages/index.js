@@ -172,7 +172,7 @@ export default function Home() {
             <br />
             Send out snorlax, revive a slave
             <br />
-            Send out snorlax, max revive snorlax
+            Send out snorlax, max revive gyara
             <br />
             Send out snorlax, die
             <br />
