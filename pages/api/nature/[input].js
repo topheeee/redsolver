@@ -33,5 +33,5 @@ export default (req, res) => {
 
   const nature = natures[input.toLowerCase()]
 
-  res.end(input && nature ? `${input} -> ${nature}` : '')
+  res.end(input && nature ? `${input} -> ${nature}` : null)
 }
