@@ -31,5 +31,5 @@ export default (req, res) => {
     query: { nature },
   } = req
 
-  res.end(natures[nature.toLowerCase()] || '')
+  res.end(`${nature} -> ${natures[nature.toLowerCase()]}` || '')
 }
