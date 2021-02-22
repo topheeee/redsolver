@@ -3,7 +3,7 @@ export default (req, res) => {
     query: { health },
   } = req
 
-  if (!health) return res.end()
+  if (!parseInt(health)) return res.end()
 
   const flail100 = Math.floor(0.20312 * health)
   const flail150 = Math.floor(0.09375 * health)
