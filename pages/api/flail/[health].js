@@ -9,8 +9,8 @@ export default (req, res) => {
 
   res.end(
     `
-    100 -> ${flail100}
-    150 -> ${flail150}
+    100 -> ${flail100} ||
+    150 -> ${flail150} ||
     200 -> ${flail200}
     `
   )
