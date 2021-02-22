@@ -3,7 +3,8 @@ export default (req, res) => {
     query: { health },
   } = req
 
-  if (!parseInt(health)) return res.end(' ')
+  if (!parseInt(health))
+    return res.end('error: must include a health value for flail command')
 
   const flail100 = Math.floor(0.20312 * health)
   const flail150 = Math.floor(0.09375 * health)
