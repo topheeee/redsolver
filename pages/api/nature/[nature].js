@@ -16,7 +16,7 @@ const natures = {
   mild: '+spAtk -def',
   modest: '+spAtk -atk',
   naive: '+spd -spDef',
-  naughty: '+atk - spDef',
+  naughty: '+atk -spDef',
   quiet: '+spAtk -spd',
   quirky: 'neutral',
   rash: '+spAtk -spDef',
