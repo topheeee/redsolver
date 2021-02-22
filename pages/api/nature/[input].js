@@ -28,8 +28,10 @@ const natures = {
 
 export default (req, res) => {
   const {
-    query: { nature },
+    query: { input },
   } = req
 
-  res.end(`${nature} -> ${natures[nature.toLowerCase()]}` || '')
+  const nature = natures[input.toLowerCase()]
+
+  res.end(input && nature ? `${input} -> ${nature}` : 'error: invalid nature')
 }
