@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react"
-import { Loader } from "semantic-ui-react"
-import Layout from "../components/Layout"
+import { useState, useEffect } from 'react'
+import { Loader } from 'semantic-ui-react'
+import Layout from '../components/Layout'
 
 const PIKACHU_HP = 186
 const PIKACHU_HEAL_THRESHOLD = 45
@@ -48,14 +48,14 @@ const KENYA_RECOIL_TABLE = {
 
 export default function Home() {
   const [lockedIn, setLockedIn] = useState(false)
-  const [content, setContent] = useState("")
+  const [content, setContent] = useState('')
 
-  const [kenyaLevel, setKenyaLevel] = useState("")
-  const [gyaraCurrentHp, setGyaraCurrentHp] = useState("")
-  const [gyaraMaxHp, setGyaraMaxHp] = useState("")
-  const [snorlaxHp, setSnorlaxHp] = useState("")
-  const [snorlaxDef, setSnorlaxDef] = useState("")
-  const [snorlaxSpDef, setSnorlaxSpDef] = useState("")
+  const [kenyaLevel, setKenyaLevel] = useState('')
+  const [gyaraCurrentHp, setGyaraCurrentHp] = useState('')
+  const [gyaraMaxHp, setGyaraMaxHp] = useState('')
+  const [snorlaxHp, setSnorlaxHp] = useState('')
+  const [snorlaxDef, setSnorlaxDef] = useState('')
+  const [snorlaxSpDef, setSnorlaxSpDef] = useState('')
 
   const handleKenyaLevel = (e) => setKenyaLevel(e.target.value)
   const handleGyaraCurrentHp = (e) => setGyaraCurrentHp(e.target.value)
@@ -210,7 +210,7 @@ export default function Home() {
           <br />
           glhf
           <i
-            style={{ marginLeft: "4px" }}
+            style={{ marginLeft: '4px' }}
             className='nes-icon is-small heart'
           />
         </p>
@@ -254,11 +254,13 @@ export default function Home() {
               <b>If Volt Tackle:</b>
             </u>
             <br />
+            Send out snorlax, switch to slave
+            <br />
             Send out snorlax, max revive gyara
             <br />
             Send out slave, max revive snorlax
             <br />
-            Send out snorlax, die
+            Send out snorlax, die.
             <br />
             Send out gyara, setup on blastoise
             <br />
